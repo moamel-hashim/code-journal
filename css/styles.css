@@ -13,6 +13,7 @@ input {
   border: 1px solid #b6b6b6;
   border-radius: 4px;
   padding: 3%;
+  outline-color: #562b81;
 }
 
 textarea {
@@ -22,6 +23,7 @@ textarea {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   resize: none;
+  outline-color: #562b81;
 }
 
 header {
