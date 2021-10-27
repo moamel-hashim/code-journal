@@ -31,4 +31,9 @@
   .column-half {
     width: 50%;
   }
+
+  button {
+    width: 10%;
+    padding: 0.5rem;
+  }
 }
