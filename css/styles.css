@@ -58,3 +58,20 @@ label {
 .coloring {
   background-color: whitesmoke;
 }
+
+.button {
+  text-align: end;
+  width: 100%;
+  padding: 1.5%;
+}
+
+@media screen and (max-width: 760px) {
+  button {
+    width: 20%;
+    padding: 1%;
+  }
+
+  .button {
+    padding: 10px 0 0 0;
+  }
+}
