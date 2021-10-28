@@ -64,30 +64,44 @@ function submitForm(event) {
 //       </ul>
 //     </div>
 
-// var $main = document.querySelector('main');
+var $main = document.querySelector('main');
 
-// function entries(event) {
-//   var $ul = document.createElement('ul');
-//   $ul.setAttribute('class', 'row');
-//   var $li = document.createElement('li');
-//   $li.setAttribute('class', 'column-full padding-0');
-//   $ul.appendChild($li);
-//   var $divRow = document.createElement('div');
-//   $divRow.setAttribute('class', 'row');
-//   $li.appendChild($divRow);
-//   var $divColumnHalf = document.createElement('div');
-//   $divColumnHalf.setAttribute('class', 'column-half');
-//   $li.appendChild($divColumnHalf);
-//   var $imgholder = document.createElement('img');
-//   $imgholder.setAttribute('src', '');
-//   $divColumnHalf.appendChild($imgholder);
-//   var $secondDivColumnHalf = document.createElement('div');
-//   $secondDivColumnHalf.setAttribute('class', 'column-half');
-//   $li.appendChild($secondDivColumnHalf);
-//   var $h2 = document.createElement('h2');
-//   $h2.textContent = '';
-//   $secondDivColumnHalf.appendChild($h2);
-//   var $p = document.createElement('p');
-//   $p.textContent = '';
-//   $secondDivColumnHalf.appendChild($p);
-// }
+function entriesNotes(event) {
+  var $ul = document.createElement('ul');
+  $ul.setAttribute('class', 'row');
+  // li
+  var $li = document.createElement('li');
+  $li.setAttribute('class', 'column-full padding-0');
+  $ul.appendChild($li);
+  // div for the row
+  var $divRow = document.createElement('div');
+  $divRow.setAttribute('class', 'row');
+  $li.appendChild($divRow);
+  // div for the column-half
+  var $divColumnHalf = document.createElement('div');
+  $divColumnHalf.setAttribute('class', 'column-half');
+  $li.appendChild($divColumnHalf);
+  // img
+  var $imgholder = document.createElement('img');
+  $imgholder.setAttribute('src', '');
+  $divColumnHalf.appendChild($imgholder);
+  // div second column-half
+  var $secondDivColumnHalf = document.createElement('div');
+  $secondDivColumnHalf.setAttribute('class', 'column-half');
+  $li.appendChild($secondDivColumnHalf);
+  // h2
+  var $h2 = document.createElement('h2');
+  $h2.textContent = '';
+  $secondDivColumnHalf.appendChild($h2);
+  // p
+  var $p = document.createElement('p');
+  $p.textContent = '';
+  $secondDivColumnHalf.appendChild($p);
+}
+
+window.addEventListener('DOMContentLoaded', entriesNotes);
+
+for (var i = 0; i < length; i++) {
+  var displayNotes = entriesNotes([i]);
+  $main.appendChild(displayNotes);
+}
