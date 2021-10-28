@@ -67,13 +67,27 @@ function submitForm(event) {
 // var $main = document.querySelector('main');
 
 // function entries(event) {
-//   var $dataView = document.createElement('div');
-//   $dataView.setAttribute('data-view', 'entries');
-//   $main.appendChild($dataView);
+//   var $ul = document.createElement('ul');
+//   $ul.setAttribute('class', 'row');
+//   var $li = document.createElement('li');
+//   $li.setAttribute('class', 'column-full padding-0');
+//   $ul.appendChild($li);
 //   var $divRow = document.createElement('div');
-//   $divRow.setAttribute('class', 'row align-items justify');
-//   $dataView.appendChild($divRow);
-//   var $div = document.createElement('div');
-//   $divRow.appendChild($div);
-
+//   $divRow.setAttribute('class', 'row');
+//   $li.appendChild($divRow);
+//   var $divColumnHalf = document.createElement('div');
+//   $divColumnHalf.setAttribute('class', 'column-half');
+//   $li.appendChild($divColumnHalf);
+//   var $imgholder = document.createElement('img');
+//   $imgholder.setAttribute('src', '');
+//   $divColumnHalf.appendChild($imgholder);
+//   var $secondDivColumnHalf = document.createElement('div');
+//   $secondDivColumnHalf.setAttribute('class', 'column-half');
+//   $li.appendChild($secondDivColumnHalf);
+//   var $h2 = document.createElement('h2');
+//   $h2.textContent = '';
+//   $secondDivColumnHalf.appendChild($h2);
+//   var $p = document.createElement('p');
+//   $p.textContent = '';
+//   $secondDivColumnHalf.appendChild($p);
 // }
