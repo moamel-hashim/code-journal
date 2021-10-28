@@ -2,6 +2,16 @@
   display: none !important;
 }
 
+.padding-0 {
+  padding: 0 !important;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  width: 55%;
+}
+
 .container {
   max-width: 575px;
   margin: 0 auto;
@@ -32,8 +42,19 @@
     width: 50%;
   }
 
+  .column-eighty-two {
+    width: 82%;
+  }
+
   button {
-    width: 10%;
     padding: 0.5rem;
   }
+
+  a {
+    width: 80%;
+  }
+}
+
+.column-quarter {
+  width: 40%;
 }

@@ -1,3 +1,8 @@
+
+/* .padding-top {
+  padding-top: 26px;
+} */
+
 body {
   background-color: whitesmoke;
 }
@@ -5,6 +10,11 @@ body {
 img {
   width: 100%;
   border-radius: 10px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 input {
@@ -62,6 +72,23 @@ label {
   text-align: end;
   width: 100%;
   padding: 1.5%;
+}
+
+.justify-align {
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.text-align {
+  text-align: end;
 }
 
 @media screen and (max-width: 760px) {
