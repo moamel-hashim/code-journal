@@ -29,14 +29,14 @@
     <div class="container">
       <div class="row justify-align">
         <h2>Code Journal</h2>
-        <a href="">
-          <p>Entries</p>
+        <a data-view="entries" href="">
+          Entries
         </a>
       </div>
     </div>
   </header>
   <main class="container">
-    <!-- <div data-view="entry-form">
+    <div data-view="entry-form" class="hidden view">
     <form action="">
           <div class="row">
             <div class="column-half">
@@ -75,43 +75,19 @@
           <div class="button">
             <button>Save</button>
           </div>
+        </form>
         </div>
-        </form> -->
-    <!-- </div> -->
-    <div data-view="entries">
+      <!-- </div> -->
+    <div data-view="entries" class="view">
       <div class="row align-items justify">
         <div>
-          <h1>entries</h1>
+          <h1>Entries</h1>
         </div>
         <div class="column-half padding-0 text-align">
-          <button>NEW</button>
+          <button data-view="entry-form" class="second-button">NEW</button>
         </div>
       </div>
-      <ul class="row">
-        <li class="column-full padding-0">
-          <div class="row">
-            <div class="column-half">
-              <img src="./images/placeholder-image-square.jpg" alt="placeholder-image-square">
-            </div>
-            <div class="column-half">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quis, ut?</p>
-            </div>
-          </div>
-        </li>
-        <li class="column-full padding-0">
-          <div class="row">
-            <div class="column-half">
-              <img src="./images/placeholder-image-square.jpg" alt="placeholder-image-square">
-            </div>
-            <div class="column-half">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Blanditiis, perspiciatis!</p>
-            </div>
-          </div>
-        </li>
+      <ul class="row hidden">
       </ul>
     </div>
   </main>
