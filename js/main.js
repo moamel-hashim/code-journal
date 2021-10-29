@@ -24,6 +24,7 @@ function submitForm(event) {
   };
   $imgSrc.setAttribute('src', './images/placeholder-image-square.jpg');
   data.entries.unshift(messageData);
+  $ul.prepend(entriesNotes(messageData));
   $form.reset();
 }
 
@@ -85,8 +86,13 @@ var $anchor = document.querySelector('a');
 $anchor.addEventListener('click', anchor);
 
 function anchor(event) {
+  event.preventDefault();
+  var viewEntry = false;
   var entryView = event.target.getAttribute('data-view');
   switchView(entryView);
+  if (viewEntry === false) {
+    $ul.className = 'row';
+  }
 }
 
 var $view = document.querySelectorAll('.view');
