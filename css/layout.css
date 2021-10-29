@@ -23,6 +23,10 @@ a {
   flex-wrap: wrap;
 }
 
+.column-sixty-percent {
+  width: 60%;
+}
+
 .column-full,
 .column-half {
   width: 100%;
