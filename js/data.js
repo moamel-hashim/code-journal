@@ -7,7 +7,6 @@ var data = {
   nextEntryId: 1
 };
 
-// JSON.stringify(data);
 var codeJournal = localStorage.getItem('code-journal');
 if (codeJournal !== null) {
   data = JSON.parse(codeJournal);

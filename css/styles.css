@@ -68,6 +68,11 @@ label {
   line-height: 22px;
 }
 
+.position {
+  position: relative;
+  left: 20rem;
+}
+
 .button {
   text-align: end;
   width: 100%;

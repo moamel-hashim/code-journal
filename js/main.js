@@ -29,13 +29,10 @@ function submitForm(event) {
   $form.reset();
 }
 
-// var $main = document.querySelector('main');
-// var $divEntries = document.querySelector('.entries');
 var $ul = document.querySelector('ul');
-// $divEntries.appendChild($ul);
 
 function entriesNotes(entry) {
-  // debugger;
+
   var $li = document.createElement('li');
   $li.setAttribute('class', 'column-full padding-0');
   $ul.appendChild($li);
@@ -63,18 +60,33 @@ function entriesNotes(entry) {
   var $p = document.createElement('p');
   $p.textContent = entry.notes;
   $secondDivColumnHalf.appendChild($p);
+  hideNoEntry();
   return $li;
 }
-
 window.addEventListener('DOMContentLoaded', handleDomLoaded);
 
 function handleDomLoaded(event) {
+  if (data.entries.length === 0) {
+    showNoEntry();
+  }
   for (var i = 0; i < data.entries.length; i++) {
+    showNoEntry();
+    hideNoEntry();
     var displayNotes = entriesNotes(data.entries[i]);
     $ul.appendChild(displayNotes);
   }
 }
-
+function showNoEntry() {
+  var $secondP = document.createElement('p');
+  $secondP.setAttribute('class', 'position noEntry');
+  $secondP.setAttribute('id', 'no-entry');
+  $secondP.textContent = 'No entries have been recorded.';
+  $ul.appendChild($secondP);
+}
+function hideNoEntry() {
+  var $noEntry = document.querySelector('#no-entry');
+  $noEntry.setAttribute('class', 'hidden');
+}
 var $newButton = document.querySelector('.second-button');
 $newButton.addEventListener('click', newButton);
 
