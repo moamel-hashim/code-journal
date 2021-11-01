@@ -70,8 +70,6 @@ function handleDomLoaded(event) {
     showNoEntry();
   }
   for (var i = 0; i < data.entries.length; i++) {
-    showNoEntry();
-    hideNoEntry();
     var displayNotes = entriesNotes(data.entries[i]);
     $ul.appendChild(displayNotes);
   }
