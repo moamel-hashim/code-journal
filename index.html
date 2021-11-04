@@ -27,17 +27,17 @@
 <body>
   <header>
     <div class="container">
-      <div class="row">
-        <div class="column-full">
-          <h2>Code Journal</h2>
-        </div>
+      <div class="row justify-align">
+        <h2>Code Journal</h2>
+        <a data-view="entries" href="">
+          Entries
+        </a>
       </div>
     </div>
   </header>
-  <main>
-    <div data-view="entry-form">
-      <form action="">
-        <div class="container">
+  <main class="container">
+    <div data-view="entry-form" class="hidden view">
+    <form action="">
           <div class="row">
             <div class="column-half">
               <h1>New Entry</h1>
@@ -75,8 +75,22 @@
           <div class="button">
             <button>Save</button>
           </div>
+        </form>
         </div>
-      </form>
+    <div data-view="entries" class="view">
+      <div class="row align-items justify">
+        <div>
+          <h1>Entries</h1>
+        </div>
+        <div class=" padding-0 text-align column-sixty-percent">
+          <button data-view="entry-form" class="second-button">NEW</button>
+        </div>
+      </div>
+      <div class="text-align-center column-full hide-div ">
+        <p>No entries have been recorded.</p>
+      </div>
+      <ul class="row">
+      </ul>
     </div>
   </main>
   <script src="js/data.js"></script>
