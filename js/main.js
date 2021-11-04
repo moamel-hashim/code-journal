@@ -24,6 +24,7 @@ function submitForm(event) {
   };
   $imgSrc.setAttribute('src', './images/placeholder-image-square.jpg');
   data.entries.unshift(messageData);
+  showOrHideNoEntries();
   $ul.prepend(entriesNotes(messageData));
   switchView('entries');
   $form.reset();
@@ -60,30 +61,28 @@ function entriesNotes(entry) {
   var $p = document.createElement('p');
   $p.textContent = entry.notes;
   $secondDivColumnHalf.appendChild($p);
-  hideNoEntry();
+  showOrHideNoEntries();
   return $li;
 }
 window.addEventListener('DOMContentLoaded', handleDomLoaded);
 
 function handleDomLoaded(event) {
-  if (data.entries.length === 0) {
-    showNoEntry();
-  }
   for (var i = 0; i < data.entries.length; i++) {
+    showOrHideNoEntries();
     var displayNotes = entriesNotes(data.entries[i]);
     $ul.appendChild(displayNotes);
   }
 }
-function showNoEntry() {
-  var $secondP = document.createElement('p');
-  $secondP.setAttribute('class', 'position noEntry');
-  $secondP.setAttribute('id', 'no-entry');
-  $secondP.textContent = 'No entries have been recorded.';
-  $ul.appendChild($secondP);
+
+function showOrHideNoEntries(event) {
+  if (data.entries.length > 0) {
+    hideNoEntry();
+  }
 }
+
 function hideNoEntry() {
-  var $noEntry = document.querySelector('#no-entry');
-  $noEntry.setAttribute('class', 'hidden');
+  var $noEntry = document.querySelector('.hide-div');
+  $noEntry.className = 'hide-div hidden';
 }
 var $newButton = document.querySelector('.second-button');
 $newButton.addEventListener('click', newButton);
