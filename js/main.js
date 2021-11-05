@@ -35,7 +35,7 @@ var $ul = document.querySelector('ul');
 function entriesNotes(entry) {
 
   var $li = document.createElement('li');
-  $li.setAttribute('class', 'column-full padding-0');
+  $li.setAttribute('class', 'column-full padding-0 position-relative');
   $ul.appendChild($li);
 
   var $divRow = document.createElement('div');
@@ -62,8 +62,13 @@ function entriesNotes(entry) {
   $p.textContent = entry.notes;
   $secondDivColumnHalf.appendChild($p);
   showOrHideNoEntries();
+
+  var $pen = document.createElement('i');
+  $pen.setAttribute('class', 'fas fa-pen');
+  $h2.appendChild($pen);
   return $li;
 }
+
 window.addEventListener('DOMContentLoaded', handleDomLoaded);
 
 function handleDomLoaded(event) {
@@ -114,5 +119,14 @@ function switchView(viewName) {
     } else {
       $view[i].className = 'hidden';
     }
+  }
+}
+
+$ul.addEventListener('click', editEntries);
+
+function editEntries(event) {
+  if (event.target.matches('i')) {
+    var form = event.target.getAttribute('data-view');
+    switchView(form);
   }
 }

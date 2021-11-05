@@ -7,6 +7,16 @@ body {
   background-color: whitesmoke;
 }
 
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 img {
   width: 100%;
   border-radius: 10px;
@@ -77,6 +87,13 @@ label {
 .justify-align {
   justify-content: space-between;
   align-items: baseline;
+}
+
+.fa-pen {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #562b81;
 }
 
 .justify {
