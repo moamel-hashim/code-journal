@@ -36,6 +36,7 @@ function entriesNotes(entry) {
 
   var $li = document.createElement('li');
   $li.setAttribute('class', 'column-full padding-0 position-relative');
+  $li.setAttribute('entry-id', entry.entryId);
   $ul.appendChild($li);
 
   var $divRow = document.createElement('div');
@@ -64,6 +65,7 @@ function entriesNotes(entry) {
   showOrHideNoEntries();
 
   var $pen = document.createElement('i');
+
   $pen.setAttribute('class', 'fas fa-pen');
   $h2.appendChild($pen);
   return $li;
@@ -117,7 +119,7 @@ function switchView(viewName) {
     if ($view[i].getAttribute('data-view') === viewName) {
       $view[i].className = 'view';
     } else {
-      $view[i].className = 'hidden';
+      $view[i].className = 'hidden view';
     }
   }
 }
@@ -126,7 +128,10 @@ $ul.addEventListener('click', editEntries);
 
 function editEntries(event) {
   if (event.target.matches('i')) {
-    var form = event.target.getAttribute('data-view');
-    switchView(form);
+    var $h1 = document.querySelector('.edit');
+    $h1.textContent = 'Edit Entry';
+    var currentId = parseInt(event.target.closest('li').getAttribute('entry-id'));
+    
+    switchView('entry-form');
   }
 }
