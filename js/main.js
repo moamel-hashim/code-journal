@@ -131,7 +131,15 @@ function editEntries(event) {
     var $h1 = document.querySelector('.edit');
     $h1.textContent = 'Edit Entry';
     var currentId = parseInt(event.target.closest('li').getAttribute('entry-id'));
-    
+    for (var i = 0; i < data.entries.length; i++) {
+      if (currentId === data.entries[i].entryId) {
+        data.editing = data.entries[i];
+      }
+    }
+    $form.elements.URL.value = data.editing.image;
+    $form.elements.title.value = data.editing.title;
+    $form.elements.notes.value = data.editing.notes;
+    $imgSrc.setAttribute('src', $photoUrl.value);
     switchView('entry-form');
   }
 }
