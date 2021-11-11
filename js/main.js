@@ -19,20 +19,40 @@ function submitForm(event) {
   var messageData = {
     title: $form.elements.title.value,
     image: $form.elements.image.value,
-    notes: $form.elements.notes.value,
-    entryId: data.nextEntryId++
+    notes: $form.elements.notes.value
   };
   $imgSrc.setAttribute('src', './images/placeholder-image-square.jpg');
-  data.entries.unshift(messageData);
   showOrHideNoEntries();
-  $ul.prepend(entriesNotes(messageData));
   switchView('entries');
   $form.reset();
+
+  if (data.editing !== null) {
+    messageData.entryId = data.editing.entryId;
+    var getLiId = document.querySelectorAll('li');
+    for (var i = 0; i < getLiId.length; i++) {
+      var liDomTreeElement = getLiId[i];
+      var id = parseInt(getLiId[i].getAttribute('entry-id'));
+      if (id === messageData.entryId) {
+        var editedEntries = renderEntry(messageData);
+        liDomTreeElement.replaceWith(editedEntries);
+        for (var j = 0; j < data.entries.length; j++) {
+          if (messageData.entryId === data.entries[j].entryId) {
+            data.entries[j] = messageData;
+          }
+        }
+      }
+    }
+    data.editing = null;
+  } else {
+    messageData.entryId = data.nextEntryId++;
+    data.entries.unshift(messageData);
+    $ul.prepend(renderEntry(messageData));
+  }
 }
 
 var $ul = document.querySelector('ul');
 
-function entriesNotes(entry) {
+function renderEntry(entry) {
 
   var $li = document.createElement('li');
   $li.setAttribute('class', 'column-full padding-0 position-relative');
@@ -76,7 +96,7 @@ window.addEventListener('DOMContentLoaded', handleDomLoaded);
 function handleDomLoaded(event) {
   for (var i = 0; i < data.entries.length; i++) {
     showOrHideNoEntries();
-    var displayNotes = entriesNotes(data.entries[i]);
+    var displayNotes = renderEntry(data.entries[i]);
     $ul.appendChild(displayNotes);
   }
 }
