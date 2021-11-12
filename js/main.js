@@ -116,6 +116,9 @@ $newButton.addEventListener('click', newButton);
 
 function newButton(event) {
   var newEntry = event.target.getAttribute('data-view');
+  var $h1 = document.querySelector('.edit');
+  $h1.textContent = 'New Entry';
+  $deleteButton.className = 'vis-hidden';
   switchView(newEntry);
 }
 
@@ -148,6 +151,7 @@ $ul.addEventListener('click', editEntries);
 
 function editEntries(event) {
   if (event.target.matches('i')) {
+    $deleteButton.className = 'delete-button';
     var $h1 = document.querySelector('.edit');
     $h1.textContent = 'Edit Entry';
     var currentId = parseInt(event.target.closest('li').getAttribute('entry-id'));
@@ -161,5 +165,28 @@ function editEntries(event) {
     $form.elements.notes.value = data.editing.notes;
     $imgSrc.setAttribute('src', $photoUrl.value);
     switchView('entry-form');
+  }
+}
+
+var $deleteButton = document.querySelector('.delete-button');
+$deleteButton.addEventListener('click', deleteButtonHandler);
+var $modal = document.querySelector('.position-fixed');
+var showOrHide = true;
+function deleteButtonHandler(event) {
+  event.preventDefault();
+  if (showOrHide === true) {
+    $modal.className = 'position-fixed row align-items justify-content-center overlay';
+    showOrHide = false;
+  }
+}
+
+var $cancel = document.querySelector('.cancel');
+$cancel.addEventListener('click', cancelButtonHandler);
+
+function cancelButtonHandler(event) {
+  event.preventDefault();
+  if (showOrHide === false) {
+    $modal.className = 'position-fixed row align-items justify-content-center overlay hidden';
+    showOrHide = true;
   }
 }

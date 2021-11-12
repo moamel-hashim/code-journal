@@ -7,6 +7,13 @@ body {
   background-color: whitesmoke;
 }
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 .position-relative {
   position: relative;
 }
@@ -61,7 +68,7 @@ button {
   border: 0;
   color: white;
   font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
+  line-height: 1.4rem;
 }
 
 h2 {
@@ -80,7 +87,7 @@ label {
 
 .button {
   text-align: end;
-  width: 100%;
+  width: 10%;
   padding: 1.5%;
 }
 
@@ -99,6 +106,16 @@ label {
   justify-content: space-between;
 }
 
+.delete-button {
+  color: red;
+  text-decoration-line: underline;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: transparent;
+  text-align: left;
+  width: fit-content;
+}
+
 .align-items {
   align-items: center;
 }
@@ -111,6 +128,45 @@ label {
   text-align: end;
 }
 
+.position-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1%;
+  line-height: 3rem;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.cancel {
+  background-color: #b6b6b6;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.confirm {
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  width: fit-content;
+}
+
+.vis-hidden {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 760px) {
   button {
     width: 20%;
@@ -119,6 +175,14 @@ label {
 
   .button {
     padding: 10px 0 0 0;
+  }
+
+  .modal {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 3% 2%;
+    line-height: 3rem;
   }
 }
 
