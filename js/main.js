@@ -190,3 +190,21 @@ function cancelButtonHandler(event) {
     showOrHide = true;
   }
 }
+
+var $confirm = document.querySelector('.confirm');
+$confirm.addEventListener('click', confirmEventHandler);
+
+function confirmEventHandler(event) {
+  for (var i = 0; data.entries.length; i++) {
+    if (data.editing.entryId === data.entries[i].entryId) {
+      data.entries.splice(i, 1);
+    }
+  }
+  var $li = document.querySelectorAll('li');
+  for (var j = 0; j < $li.length; j++) {
+    var id = parseInt($li[j].getAttribute('entry-id'));
+    if (data.editing.entryId === id) {
+      $li[j].remove();
+    }
+  }
+}
